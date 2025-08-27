@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CreatureCard" load_steps=3 format=3 uid="uid://bpbpc0gwoxubp"]
+
+[ext_resource type="Script" uid="uid://w73jway6deqj" path="res://_scripts/creature_card.gd" id="1_puy35"]
+[ext_resource type="Texture2D" uid="uid://dv3ixejo7wb7n" path="res://sprites/card_template.png" id="2_phght"]
+
+[resource]
+script = ExtResource("1_puy35")
+attack = 1
+health = 1
+card_name = "Trasno"
+description = ""
+cost_type = 1
+cost_value = 1
+rarity = 0
+effects = []
+sprite = ExtResource("2_phght")
+metadata/_custom_type_script = "uid://w73jway6deqj"
