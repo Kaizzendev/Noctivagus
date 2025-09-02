@@ -8,6 +8,7 @@ extends Node2D
 var normal_scale := Vector2(1,1)
 var original_position
 var is_dragging = false
+var current_drop_area: Area2D = null
 
 func _ready():
 	if card_resource:
@@ -36,8 +37,20 @@ func _input(event):
 				is_dragging = true
 		elif is_dragging:
 			is_dragging = false
-			_return_to_hand()
+			_check_drop()
+
+func _check_drop():
+	if current_drop_area:
+		global_position = current_drop_area.global_position
+		print("Carta jugada en zona válida")
+	else:
+		_return_to_hand()
 			
 func _return_to_hand():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", original_position, 0.3)
+
+
+func _on_area_2d_area_entered(area):
+	if area is DropArea:
+		current_drop_area = area

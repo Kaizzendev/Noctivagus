@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://tc1xalidji4n"]
+[gd_scene load_steps=5 format=3 uid="uid://tc1xalidji4n"]
 
 [ext_resource type="Script" uid="uid://dg21b5rbx65dk" path="res://_scripts/Level.gd" id="1_764e3"]
 [ext_resource type="PackedScene" uid="uid://cob1t05pgmtl5" path="res://scenes/deck.tscn" id="2_aic3r"]
 [ext_resource type="PackedScene" uid="uid://ni8g1y8tbqyl" path="res://scenes/turn.tscn" id="3_4l26h"]
+[ext_resource type="PackedScene" uid="uid://dghhqvk1ojauc" path="res://scenes/drop_area.tscn" id="4_4l26h"]
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_764e3")
@@ -35,6 +36,10 @@ offset_top = 657.0
 offset_right = 1031.0
 offset_bottom = 688.0
 text = "DRAW"
+
+[node name="DropArea" parent="." instance=ExtResource("4_4l26h")]
+z_index = -1
+position = Vector2(533, 450)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TURN" to="Turn" method="_on_draw_pressed"]

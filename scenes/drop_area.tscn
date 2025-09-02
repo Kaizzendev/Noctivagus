@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dghhqvk1ojauc"]
+
+[ext_resource type="Script" uid="uid://dtuc0xi07q3ll" path="res://_scripts/drop_area.gd" id="1_oysnc"]
+[ext_resource type="Texture2D" uid="uid://7gpidabftjow" path="res://sprites/Sprite-0001.png" id="2_petxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qosbx"]
+size = Vector2(96, 144)
+
+[node name="DropArea" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -48.0
+offset_top = -72.0
+offset_right = 48.0
+offset_bottom = 72.0
+texture = ExtResource("2_petxp")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("1_oysnc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qosbx")
