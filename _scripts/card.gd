@@ -23,3 +23,6 @@ enum Cost_type {
 
 func get_info() -> String:
 	return "%s (%s %s) %s \n %s" % [card_name,description, cost_type, cost_value, rarity]
+
+func play_card():
+	pass

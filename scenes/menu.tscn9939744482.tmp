@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://wsbt1jm35wdx"]
+[gd_scene load_steps=4 format=3 uid="uid://wsbt1jm35wdx"]
 
 [ext_resource type="Script" uid="uid://dg21b5rbx65dk" path="res://_scripts/Level.gd" id="1_yqeox"]
+[ext_resource type="PackedScene" uid="uid://cob1t05pgmtl5" path="res://scenes/deck.tscn" id="2_vjb58"]
+[ext_resource type="PackedScene" uid="uid://ni8g1y8tbqyl" path="res://scenes/turn.tscn" id="3_con2f"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_yqeox")
@@ -21,5 +23,9 @@ offset_top = 349.0
 offset_right = 634.0
 offset_bottom = 380.0
 text = "Change level"
+
+[node name="Deck" parent="." instance=ExtResource("2_vjb58")]
+
+[node name="Turn" parent="." instance=ExtResource("3_con2f")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
